@@ -1,0 +1,104 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/pokedex.css'%}">
+<div id="pokedex">
+    <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"> </div>
+        </div>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+<!-- imagen de la base de datos -->
+
+        <div id="picture">
+          {% if id and nombre %}
+          <img src="{{imagen}}" alt="{{nombre}}" height="170" />
+          {% endif %}
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      
+      <!-- Formulario solicitud de id o nombre  -->
+      <form method="post">
+        {% csrf_token %}
+        <input type="text" name = "pokemon" placeholder="Busqueda por id o nombre">
+        <button id="bigbluebutton" type ='submit' > Search </button>
+      </form>
+
+
+      <div id="barbutton1"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross">
+          <div id="leftT"></div>
+        </div>
+        <div id="topcross">
+          <div id="upT"></div>
+        </div>
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+        <div id="midcross">
+          <div id="midCircle"></div>
+        </div>
+        <div id="botcross">
+          <div id="downT"></div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+
+      <!-- Renderizacion de los datos -->
+      <div id="stats">
+        <!-- tipo,peso,altura,generacion,grito,habitat,nombre,id,habilidad,habilidadoculta,biologia,imagen.gif -->
+        {% if id and nombre %}
+          <strong>Id:</strong> {{id}} <br/>
+          <strong>Nombre:</strong> {{nombre}} <br/>
+          <strong>Tipo:</strong> {{tipo}}<br/>
+          <strong>Altura:</strong> {{altura}}
+          <strong>Peso:</strong> {{peso}}<br/>
+          <!-- <strong>Generación:</strong><br/> -->
+          <strong>Habilidad: </strong> {{habilidad}} <br/>
+          <strong>Habilidad oculta </strong> {{habilidadoculta} <br/>
+          <!-- <strong>Biologia: </strong><br/><br/> -->   
+          <!-- <strong>The duck Pokemon</strong><br/> -->
+          <!-- Uses mysterious powers to perform various attacks. -->
+        {% else %}
+          <p>Escriba el id o nombre del pokemon </p>  
+        {% endif %}
+      </div>
+      <div id="miniButtonGlass4"></div>
+      <div id="miniButtonGlass5"></div>
+      <div id="barbutton3"></div>
+      <div id="barbutton4"></div>
+      <div id="yellowBox1"></div>
+      <div id="yellowBox2"></div>
+      <div id="bg_curve1_right"></div>
+      <div id="bg_curve2_right"></div>
+      <div id="curve1_right"></div>
+      <div id="curve2_right"></div>
+    </div>
+  </div>
