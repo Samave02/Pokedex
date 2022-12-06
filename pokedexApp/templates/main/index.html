@@ -1,0 +1,153 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pokedex.css' %}" crossorigin="anonymous"/>
+    <link rel="icon" href="{% static 'img/pokeball-icon.ico' %}">
+    <title>Pokedex | Django</title>
+
+
+    <style> 
+
+        img {
+
+           width:150px;
+         
+
+        }
+
+    </style>
+
+</head>
+
+
+<div id="pokedex">
+    <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"> </div>
+        </div>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+
+        <!-- Formulario solicitud de id o nombre  -->
+     
+<!-- imagen de la base de datos -->
+        
+        <div id="picture">
+           {% if number and name %}
+                
+                <img src="{{sprite}}" alt="{{name}} sprite" >
+              
+                  {% else %}
+                    <div>
+                       <img src="{% static 'img/nodata.png' %}" class="image" style="width:150px;">
+                    </div>
+           {% endif %}
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      
+      <form method="post">
+        <!-- Cross-site request forgery Protection-->
+        {% csrf_token %}
+        
+        <!-- Searchbar -->
+        <input type="text" name="pokemon" placeholder="Search Your Pokemon...">
+        <button type="submit">Search</button>
+     </form>
+
+
+
+      <div id="barbutton1"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross">
+          <div id="leftT"></div>
+        </div>
+        <div id="topcross">
+          <div id="upT"></div>
+        </div>
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+        <div id="midcross">
+          <div id="midCircle"></div>
+        </div>
+        <div id="botcross">
+          <div id="downT"></div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+
+      <!-- Renderizacion de los datos -->
+      <div id="stats">
+        <!-- tipo,peso,altura,generacion,grito,habitat,nombre,id,habilidad,habilidadoculta,biologia,imagen.gif -->
+        {% if number and name %}
+            <h3>
+                Id: {{number}}
+            </h3>
+            <h3>
+                Nombre: {{name}}
+            </h3>
+            <h3>
+                Altura: {{height}}
+            </h3>
+            <h3>
+                Peso: {{weight}}
+            </h3>
+
+            <h3>
+                tipo: {{tipo}}
+            </h3>
+
+             {% else %}
+            <div>
+                <h3>
+                    Escribe el nombre o ID de tu pokemon.
+                </h3>
+            </div>
+        {% endif %}
+      </div>
+      <div id="miniButtonGlass4"></div>
+      <div id="miniButtonGlass5"></div>
+      <div id="barbutton3"></div>
+      <div id="barbutton4"></div>
+      <div id="yellowBox1"></div>
+      <div id="yellowBox2"></div>
+      <div id="bg_curve1_right"></div>
+      <div id="bg_curve2_right"></div>
+      <div id="curve1_right"></div>
+      <div id="curve2_right"></div>
+    </div>
+  </div>
+
+
+  <br>
+  <br>
+
+  <a href="http://localhost:8000">inicio</a>
