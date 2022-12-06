@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/pokedex.css' %}" crossorigin="anonymous"/>
     <link rel="icon" href="{% static 'img/pokeball-icon.ico' %}">
-    <title>Pokedex | Django</title>
+    <title>Pokedex</title>
 
 
     <style> 
@@ -49,15 +49,15 @@
      
 <!-- imagen de la base de datos -->
         
-        <div id="picture">
+        <div id="picture" >
            {% if id and nombre %}
                 
                 <img src="{{imagen}}" alt="{{nombre}} sprite" >
               
                   {% else %}
-                    <div>
-                       <img src="{% static 'img/nodata.png' %}" class="image" style="width:150px;">
-                    </div>
+        
+                <img src="{% static 'img/nodata.png' %}" class="image" style="width:150px;">
+      
            {% endif %}
         </div>
         <div id="buttonbottomPicture"></div>
@@ -68,25 +68,19 @@
           <div class="sp"></div>
         </div>
       </div>
-      <div id="bigbluebutton" > 
-        <form  id ='formularioBusqueda' method="post">
+      <!-- Formulario solicitud de id o nombre  -->
+        <form id = formulario  method="post">
                 {% csrf_token %}
-                
-                <!-- Searchbar -->
-                <input type="text" name="pokemon" placeholder="Search Your Pokemon...">
-                <button type="submit">Search</button>
-            </form>
+                <div id = input> 
+                  <input type="text" name="pokemon" placeholder="Busqueda por Id o nombre">
+                </div>
+                <button id="bigbluebutton"  type="submit"> 
+        </form>
 
       </div>
-
-      <!-- Formulario solicitud de id o nombre  -->
-     
-
-
-
-      <div id="barbutton1"></div>
-      <div id="barbutton2"></div>
-      <div id="cross">
+      <!-- <div id="barbutton1"></div>
+      <div id="barbutton2"></div> -->
+      <!-- <div id="cross">
         <div id="leftcross">
           <div id="leftT"></div>
         </div>
@@ -103,7 +97,7 @@
           <div id="downT"></div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div id="right">
 
       <!-- Renderizacion de los datos -->
@@ -129,7 +123,9 @@
       </div>
       <div id="miniButtonGlass4"></div>
       <div id="miniButtonGlass5"></div>
-      <div id="barbutton3"></div>
+      <div id="barbutton3">
+        <a href="http://localhost:8000"> <button id ='inicio'><strong>Inicio</strong></button> </a>
+      </div>
       <div id="barbutton4"></div>
       <div id="yellowBox1"></div>
       <div id="yellowBox2"></div>
@@ -139,9 +135,3 @@
       <div id="curve2_right"></div>
     </div>
   </div>
-
-
-  <br>
-  <br>
-
-  <a href="http://localhost:8000">inicio</a>

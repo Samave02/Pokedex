@@ -287,7 +287,7 @@
 		width: 254px;
 		margin-top: 20px;
 		margin-bottom: 9px;
-		background-color: #fff;
+		background-color: rgb(252, 251, 251);
 		border: 3px solid #494949;
 		clear: both;
 
@@ -295,17 +295,21 @@
 		-webkit-border-radius: 15px;
 		-moz-border-radius: 15px;
 		-o-border-radius: 15px;
+
 	}
 
 	div#picture img
 	{
 		display: block;
 		margin: 0 auto;
+		object-fit: contain;
+		width:80%;
+		height:80%;
 	}
 
 	div#topPicture
 	{
-		margin: 6px auto;
+		margin: 8px auto;
 		width: 40px;
 	}
 
@@ -371,17 +375,36 @@
 		-moz-border-radius: 30px;
 		-o-border-radius: 30px;
 	}
-	form#formularioBusqueda{
+	div#input{
 		position: absolute;
-		top: 395px;
-		left: 30px;
+		top: 410px;
+		left: 90px;
+
+		background-color: #8b0000;
+		border-radius: 5px;
+		color: #c00d0d;
+		border: 3px solid #630808;
+		font-size: medium;
+		height: 20px;
+
+		
+		
+
 	}
-	div#bigbluebutton
+	form#formulario{
+		top: 410px;
+		left: 90px;
+		background-color: #5e0000;
+
+		
+
+	}
+	button#bigbluebutton
 	{
 		height: 50px;
 		width: 50px;
 		background-color: #000;
-
+		
 		position: absolute;
 		top: 395px;
 		left: 30px;
@@ -401,7 +424,41 @@
 		-moz-box-shadow: -3px 2px #001c91;
 		-o-box-shadow: -3px 2px #001c91;
 	}
+	/* button#bigbluebutton:hover{
+		height: 52px;
+		width: 52px;
+		background-color: #000;
+	} */
+	button#bigbluebutton:active{
+		height: 47px;
+		width: 47px;
+		background-color: #000;
+	}
 
+	button#inicio{
+		height: 15px;
+		width: 52px;
+		z-index: 1;
+		background-color: #0abd0a;
+
+	
+
+		border-radius: 100px;
+		-webkit-border-radius: 100px;
+		-moz-border-radius: 100px;
+		-o-border-radius: 100px;
+		border: #057b05;
+
+		box-shadow: -1px 2px #004200;
+		-webkit-box-shadow: -1px 2px #004200;
+		-moz-box-shadow: -1px 2px #004200;
+		-o-box-shadow: -1px 2px #004200;
+		
+	}
+	button#inicio:active{
+		height: 15px;
+		width: 49px;
+	}
 	div#barbutton1
 	{
 		height: 13px;
@@ -792,14 +849,14 @@
 
 	div#barbutton3
 	{
-		height: 13px;
+		/* height: 13px;
 		width: 50px;
-		z-index: 1;
+		z-index: 1; */
 
 		position: absolute;
 		top: 385px;
 		left: 210px;
-
+/* 
 		border-radius: 100px;
 		-webkit-border-radius: 100px;
 		-moz-border-radius: 100px;
@@ -813,7 +870,7 @@
 		box-shadow: -1px 2px #004200;
 		-webkit-box-shadow: -1px 2px #004200;
 		-moz-box-shadow: -1px 2px #004200;
-		-o-box-shadow: -1px 2px #004200;
+		-o-box-shadow: -1px 2px #004200; */
 	}
 
 	div#barbutton4
@@ -1020,5 +1077,6 @@
 	{
 		display: none;
 	}
+	
 
 }
