@@ -371,7 +371,11 @@
 		-moz-border-radius: 30px;
 		-o-border-radius: 30px;
 	}
-
+	form#formularioBusqueda{
+		position: absolute;
+		top: 395px;
+		left: 30px;
+	}
 	div#bigbluebutton
 	{
 		height: 50px;

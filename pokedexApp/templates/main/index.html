@@ -46,15 +46,13 @@
           <div id="buttontopPicture1"></div>
           <div id="buttontopPicture2"></div>
         </div>
-
-        <!-- Formulario solicitud de id o nombre  -->
      
 <!-- imagen de la base de datos -->
         
         <div id="picture">
-           {% if number and name %}
+           {% if id and nombre %}
                 
-                <img src="{{sprite}}" alt="{{name}} sprite" >
+                <img src="{{imagen}}" alt="{{nombre}} sprite" >
               
                   {% else %}
                     <div>
@@ -70,15 +68,19 @@
           <div class="sp"></div>
         </div>
       </div>
-      
-      <form method="post">
-        <!-- Cross-site request forgery Protection-->
-        {% csrf_token %}
-        
-        <!-- Searchbar -->
-        <input type="text" name="pokemon" placeholder="Search Your Pokemon...">
-        <button type="submit">Search</button>
-     </form>
+      <div id="bigbluebutton" > 
+        <form  id ='formularioBusqueda' method="post">
+                {% csrf_token %}
+                
+                <!-- Searchbar -->
+                <input type="text" name="pokemon" placeholder="Search Your Pokemon...">
+                <button type="submit">Search</button>
+            </form>
+
+      </div>
+
+      <!-- Formulario solicitud de id o nombre  -->
+     
 
 
 
@@ -107,23 +109,15 @@
       <!-- Renderizacion de los datos -->
       <div id="stats">
         <!-- tipo,peso,altura,generacion,grito,habitat,nombre,id,habilidad,habilidadoculta,biologia,imagen.gif -->
-        {% if number and name %}
-            <h3>
-                Id: {{number}}
-            </h3>
-            <h3>
-                Nombre: {{name}}
-            </h3>
-            <h3>
-                Altura: {{height}}
-            </h3>
-            <h3>
-                Peso: {{weight}}
-            </h3>
-
-            <h3>
-                tipo: {{tipo}}
-            </h3>
+        {% if id and nombre %}
+        <strong>Id:</strong> {{id}} <br/><br/>
+        <strong>Nombre:</strong> {{nombre}} <br/><br/>
+        <strong>Tipo:</strong> {{tipo}}<br/><br/>
+        <strong>Altura:</strong> {{altura}}
+        <strong>Peso:</strong> {{peso}}<br/><br/>
+        <!-- <strong>Generación:</strong><br/> -->
+        <strong>Habilidad: </strong> {{habilidad}} <br/><br/>
+        <strong>Habilidad oculta </strong> {{habiliadadOculta}} <br/>
 
              {% else %}
             <div>
